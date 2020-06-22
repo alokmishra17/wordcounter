@@ -1,1 +1,1 @@
-gunicorn webcount.wsgi
+gunicorn wordcount.wsgi
