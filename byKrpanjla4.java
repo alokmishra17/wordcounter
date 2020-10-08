@@ -66,6 +66,21 @@ public class SettingsFragment extends Fragment {
    public SettingsFragment(AppCompatActivity activity){
         This = activity;
     }
+    
+public class SettingsFragment extends Fragment {
+
+    private ProfileFragment profileFragment;
+    CardView cardView;
+    private static final String TAG = "SettingFragment";
+    private AppCompatActivity This;
+    private ImageView imageView,qrcode;
+    private ConnectionFireBase connect;
+    static final int REQUEST_IMAGE_CAPTURE=1;
+    static final int SELECT_FILE=0;
+    private UserDatadbProvider provider;
+   public SettingsFragment(AppCompatActivity activity){
+        This = activity;
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
