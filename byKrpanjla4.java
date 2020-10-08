@@ -176,25 +176,7 @@ public class SettingsFragment extends Fragment {
 
         connect.downloadProfileImage("prof_image",provider.getEmail(),imageView,view.getContext(), progressBar);
 
-        imageView.setOnClickListener(v -> {
-
-            PopupMenu popupMenu=new PopupMenu(view.getContext(),imageView);
-            popupMenu.getMenuInflater().inflate(R.menu.choose_image,popupMenu.getMenu());
-            popupMenu.setOnMenuItemClickListener(item -> {
-                switch (item.getItemId()){
-                    case R.id.camera:
-                        Intent camera =new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                        if (camera.resolveActivity(view.getContext().getPackageManager())!=null){
-                            startActivityForResult(Intent.createChooser(camera,"Select Source"),REQUEST_IMAGE_CAPTURE);
-                        }
-                        break;
-                    case R.id.gallery:
-                        Intent gallery =new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                        gallery.setType("image/*");
-                        if (gallery.resolveActivity(view.getContext().getPackageManager())!=null){
-                            startActivityForResult(Intent.createChooser(gallery,"Select Source"),SELECT_FILE);
-                            break;}
-                }
+       
                 return true;
             });
             popupMenu.show();
